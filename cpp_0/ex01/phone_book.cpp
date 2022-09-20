@@ -106,9 +106,7 @@ class PhoneBook
             else
                 count = 8;
             std::string cname;
-            //My_Contact mc;
-            //pb.mc[pb.get_kisi_sayisi() - 1] = mc;
-            //std::cout<<"test kisi sayisi: \n"<<this->kisi_sayisi;
+
             
             while(i < count)
             {
@@ -162,6 +160,7 @@ class PhoneBook
 
 int main()
 {
+    std::cout<<"deneme";
 
     PhoneBook pb;
     int a = 1;

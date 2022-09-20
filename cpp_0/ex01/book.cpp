@@ -122,9 +122,7 @@ int main()
 {
     
     PhoneBook pb("cagriy", "yalniz", "cyalniz", 123);
-/*     pb.cntct->set_name("\n11 ");
-    std::cout<<pb.cntct->get_name();
-    std::cout<< "id: "<<pb.cntct->get_id() << "\n"; */
+
 
     pb.cntct[0].set_name("0");
     pb.cntct[1].set_name("1");
@@ -134,7 +132,7 @@ int main()
     pb.cntct[5].set_name("5");
     pb.cntct[6].set_name("6");
     pb.cntct[7].set_name("7");
- //   pb.cntct[8].set_name("8");
+
     std::cout<<pb.cntct[0].get_name();
     std::cout<<pb.cntct[1].get_name();
     std::cout<<pb.cntct[2].get_name();
