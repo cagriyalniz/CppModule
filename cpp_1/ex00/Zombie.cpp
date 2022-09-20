@@ -1,27 +1,33 @@
 #include "Zombie.hpp"
 
-class Zombie{
-    public:
-        std::string _name;
-        Zombie();
-        Zombie(std::string name){
-            _name = name;
-        }
+Zombie:: Zombie(){
+    std::cout<<get_name()<<" parametresiz born"<<std::endl;
+}//constructer
 
-    public:
-        void set_name(std::string name)
-        {
-            _name = name;
-        }
+Zombie::Zombie(std::string name){
+    this->name = name;
+    std::cout<<get_name()<<" parametreli born"<<std::endl;
+}
 
-        std::string get_name()
-        {
-            return _name;
-        }
+Zombie::~Zombie(){
+    std::cout<< get_name() << " is dead!" << std::endl;
+}
 
-        void announce(void)
-        {
-            std::cout<<get_name()<<": BraiiiiiiinnnzzzZ...";
-        }
-};
+
+std::string Zombie::get_name(){
+
+    return this->name;
+}
+
+void Zombie::set_name(std::string name){
+
+    this->name = name;
+}
+
+
+void Zombie::announce(void){
+
+    std::cout<<get_name()<<": BraiiiiiiinnnzzzZ..."<< std::endl;;
+}
+
 
