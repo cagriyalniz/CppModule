@@ -10,25 +10,30 @@ int main(int ac, char **av)
     
     i = 0;
     j = 1;
+    ch = 0;
     if(ac > 1)
     {
         while(av[j])
         {
+            i = 0;
             while(av[j][i])
             {
-                if(av[1][i] >= 'a' && av[1][i] <= 'z')
+                if(islower(av[j][i]) == 1)
                 {
-                    ch = toupper(av[1][i]);
+                    ch = toupper(av[j][i]);
                 }
                 else
-                    ch = av[1][i];
+                    ch = av[j][i];
                 std::cout << ch;
                 i++;
             }
             j++;
+            if(j < ac)
+                std::cout<<" ";
         }
     }
     else
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 
 }
+
