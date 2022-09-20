@@ -1,32 +1,31 @@
 #include "HumanB.hpp"
- #include "Weapon.hpp"
+#include "Weapon.hpp"
 
-HumanB::HumanB(std:: string name){
-    this->name = name;
-/*     Weapon *p_wpn;
-    p_wpn = &this->wpn;
-    p_wpn = NULL; */
+HumanB::HumanB(std:: string name): _name(name), _wpn(NULL){
+    return;
 }
 HumanB::~HumanB(){}
 
     
-std::string HumanB::get_name(){
-    return this->name;
+std::string HumanB::getName(){
+    return _name;
 }
 
-void HumanB::set_name(std::string name){
-    this->name = name;
+void HumanB::setName(std::string name){
+    _name = name;
 }
 
-Weapon HumanB::get_weapon(){
-    return this->wpn;
+Weapon HumanB::getWeapon(){
+    
+    return *_wpn;
 }
 
-void HumanB::set_weapon(Weapon wpn){
-    this->wpn = wpn;
+void HumanB::setWeapon(Weapon& new_wpn){
+    _wpn = &new_wpn;
 }
 
 void HumanB::attack(){
-    std::cout<<this->wpn.get_type()<< std::endl;
+    
+    std::cout<<getName()<<" "<<_wpn->get_type()<< std::endl;
 }
 

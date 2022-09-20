@@ -7,14 +7,15 @@
 
 class HumanA{
     public:
-        HumanA(std:: string name, Weapon wpn);
+        std::string _name;
+        Weapon &_wpn;
+        HumanA(std:: string name, Weapon& wpn);
         virtual ~HumanA();
-        std::string name;
-        Weapon wpn;
-
-    
+        
         std::string get_name();
         void set_name(std::string name);
+        Weapon get_weapon();
+        void set_weapon(Weapon wpn);
         void attack(void);
 
 };

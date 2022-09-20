@@ -6,17 +6,17 @@
 #include "Weapon.hpp"
 
 class HumanB{
-    public:
-        HumanB(std:: string name);
-        virtual ~HumanB();
-        std::string name;
-        Weapon wpn;
-
+    private:
+        std::string _name;
+        Weapon *_wpn;
     
-        std::string get_name();
-        void set_name(std::string name);
-        Weapon get_weapon();
-        void set_weapon(Weapon wpn);
+    public:
+        HumanB(std:: string _name);
+        virtual ~HumanB();
+        std::string getName();
+        void setName(std::string name);
+        Weapon getWeapon();
+        void setWeapon(Weapon &new_wpn);
         void attack(void);
 
 };
