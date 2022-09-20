@@ -2,7 +2,11 @@
 
 int main()
 {
-    Zombie *x;
-    x->zombieHorde(9, "cagri");
-    while(1);
+    Zombie *z;
+    z = zombieHorde(3, "cagriZzzz");
+    z[0].announce();
+    z[1].announce();
+    z[2].announce();
+    
+
 }
