@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:20 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:21 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/04 22:20:43 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 Zombie* zombieHorde(int N, std::string name){
     
-    static Zombie *p_z;
-    Zombie z[N];
+    Zombie *p_z = new Zombie[N];
     int i = 0;
     while(i < N)
     {
-        z[i].set_name(name);
+        p_z[i].set_name(name);
         //z[i].announce();
         //std::cout<<"\n";
         i++;
     }
-    p_z = z;
+  
     return p_z;
 }
