@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:51:19 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/04 20:32:32 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/04 22:05:03 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,16 +132,16 @@ class PhoneBook
 
 
 
-        int check_str(std::string* data, std::string type){
+        void check_str(std::string* data, std::string type){
             
                 std::cout<<type<<" ?"<<std::endl;
-                std::getline(std::cin, *data);
-                //std::cin>>*data;
-                if(data->length() == 0){
+                //std::getline(std::cin, *data);
+                std::cin>>*data;
+   /*              if(data->length() == 0){
                     std::cout<<"empty data!"<<std::endl;
                     return 0;
                 }
-                return 1;
+                return 1; */
             
         }
 
@@ -177,16 +177,13 @@ class PhoneBook
             std::string nick_name;
             std::string secret;
             int nmbr = 0;
-            if(check_str(&name, "name") == 0)
-                return ;
-            if(check_str(&last_name, "last name") == 0)
-                return ;
-            if(check_str(&nick_name, "nick name") == 0)
-                return ;
-            if(check_nmbr(nmbr, "number") == 0)
-                return ;
-            if(check_str(&secret, "secret") == 0)
-                return ;
+            check_str(&name, "name");
+     
+            check_str(&last_name, "last name");
+            check_str(&nick_name, "nick name");
+            check_nmbr(nmbr, "number");
+            check_str(&secret, "secret");
+                
             
             
             
