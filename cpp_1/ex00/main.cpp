@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:01 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/04 22:12:33 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main()
 {
-    Zombie z("foo");
+    Zombie z;
+    z.set_name("Foo");
     z.announce();
 
     Zombie* x = newZombie("asd");
-    randomChump("yyy");
+    x->announce();
+    randomChump("random");
     
 }
