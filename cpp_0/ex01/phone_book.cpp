@@ -6,12 +6,11 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:51:19 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:51:19 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/04 20:32:32 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "phoneBook.hpp"
 
 class My_Contact{
     public:
@@ -131,23 +130,67 @@ class PhoneBook
             
         }
 
+
+
+        int check_str(std::string* data, std::string type){
+            
+                std::cout<<type<<" ?"<<std::endl;
+                std::getline(std::cin, *data);
+                //std::cin>>*data;
+                if(data->length() == 0){
+                    std::cout<<"empty data!"<<std::endl;
+                    return 0;
+                }
+                return 1;
+            
+        }
+
+        int ft_nmbr_len(int nmbr){
+            int len;
+            len = 0;
+            if(nmbr == 0)
+                return 1;
+            while(nmbr > 0){
+                len++;
+                nmbr /= 10;
+            }
+            return (len);
+        }
+
+        int check_nmbr(int data, std::string type){
+            
+                std::cout<<type<<" ?"<<std::endl;
+                std::cin>>data;
+                if(ft_nmbr_len(data) == 0){
+                    std::cout<<"empty data!"<<std::endl;
+                    return (0);
+                }
+                return (1);
+        }
+
         void add(PhoneBook& pb, My_Contact& mc, int id)
         {
             
-            std::string name;
+            
+            std::string name = "test";
             std::string last_name;
             std::string nick_name;
-            int nmbr;
-            std::cout<<"name? ";
-            std::cin>>name;
-            if(name.empty() == 1)
-                std::cout<<"boş bırakma ";
-            std::cout<<"last name? ";
-            std::cin>>last_name;
-            std::cout<<"nick name? ";
-            std::cin>>nick_name;
-            std::cout<<"number? ";
-            std::cin>>nmbr;
+            std::string secret;
+            int nmbr = 0;
+            if(check_str(&name, "name") == 0)
+                return ;
+            if(check_str(&last_name, "last name") == 0)
+                return ;
+            if(check_str(&nick_name, "nick name") == 0)
+                return ;
+            if(check_nmbr(nmbr, "number") == 0)
+                return ;
+            if(check_str(&secret, "secret") == 0)
+                return ;
+            
+            
+            
+            
             if(pb.get_kisi_sayisi() > 7)
             {
                 pb.mc[pb.get_kisi_sayisi()%8].set_name(name);
@@ -155,6 +198,7 @@ class PhoneBook
                 pb.mc[pb.get_kisi_sayisi()%8].set_nick_name(nick_name);
                 pb.mc[pb.get_kisi_sayisi()%8].set_number(nmbr);
                 pb.mc[pb.get_kisi_sayisi()%8].set_id(get_kisi_sayisi()%8);                
+                pb.mc[pb.get_kisi_sayisi()%8].set_secret(secret);                
             }
             else
             {
@@ -163,6 +207,7 @@ class PhoneBook
                 pb.mc[pb.get_kisi_sayisi()].set_nick_name(nick_name);
                 pb.mc[pb.get_kisi_sayisi()].set_number(nmbr);
                 pb.mc[pb.get_kisi_sayisi()].set_id(get_kisi_sayisi()%8);
+                pb.mc[pb.get_kisi_sayisi()%8].set_secret(secret); 
             }
 
 
@@ -172,8 +217,6 @@ class PhoneBook
 
 int main()
 {
-    std::cout<<"deneme";
-
     PhoneBook pb;
     int a = 1;
     
