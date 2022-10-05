@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:53:08 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:53:09 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/05 16:21:40 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,69 +17,55 @@
 #include <cstdlib>
 #include <string.h>
 
+static std :: string	replacing(std :: string str, std :: string s1, std :: string s2) {
+	size_t i;
 
-
-void    ft_copy(std::string file_name, std::string s1, std::string s2)
-{
-    (void)s1;
-    (void)s2;
-    std::fstream my_file;
-    //my_file.open(file_name, std::ios::in);
-    my_file.open(file_name.c_str());
-    //my_file<<s1<<"\n"<<s2<<std::endl;
-    std::ofstream new_file;
-    new_file.open(file_name+"_new_file");
-    std::string line;
-    while(!my_file.eof())
-    {
-        
-        getline(my_file, line);
-        new_file<<line<<std::endl;
-
-    }
-
-/*     while(my_file>>line)
-    {
-        //std::cout<<line;
-        iss.clear();
-        iss.str(line);
-        while(iss.good()){
-            iss>>word;
-            if(!word.compare(s1))
-                new_file<<s2;
-            else if(!word.compare(" "))
-                new_file<<" ";
-            else
-                new_file<<line;
-
-        }
-    } */
-    std::string a = "merhaba";
-    std::cout<<a.c_str(3);
-
-    new_file.close();
-    my_file.close();
-
-    
+	for (i = 0; i < str.size(); i++)
+		if (!str.compare(i, s1.size(), s1)) {
+			str.erase(i, s1.size());
+			str.insert(i, s2);
+		}	
+	return (str);
 }
 
-int main(int ac, char **av)
-{
-    if (ac == 4)
-    {
-        std::string file_name;
-        std::string s1;
-        std::string s2;
+static void	forFiles(std :: string	filename, std :: string	s1, std :: string	s2) {
+	std :: ifstream infile;
+	std :: ofstream outfile;
+	std :: string	fileout, str;
 
-        file_name = av[1];
-        s1 = av[2];
-        s2 = av[3];
+	infile.open(filename);
+	if (!infile.is_open()) {
+		std :: cerr << "Unable to open infile" << std :: endl;
+		return ;
+	}
+	fileout = filename + ".replace";
+	outfile.open(fileout, std :: fstream :: trunc);
+	if (!outfile.is_open()) {
+		std :: cerr << "Unable to open outfile" << std :: endl;
+		return ;
+	}
+	while (!infile.eof()){
+		std :: getline(infile, str);
+		outfile << replacing(str, s1, s2) << std :: endl;
+	}
+	infile.close();
+	outfile.close();
+}
 
-        ft_copy(file_name, s1, s2);
-    }
-    else
-        std::cout<< "arguments count must be 4. 1= filename, 2= first string, 3= second string"<<std::endl;
-    std::string a = "merhaba";
-    std::cout<<a.
+int main(void) {
+	std :: string	filename, s1, s2;
 
+	std :: cout << "File: ";
+	std :: getline(std :: cin, filename);
+	std :: cout << "s1: ";
+	std :: getline(std :: cin, s1);
+	std :: cout << "s2: ";
+	std :: getline(std :: cin, s2);
+	
+	if (filename == "" || s1 == "" || s2 == ""){
+		std :: cerr << "Wrong input" << std :: endl; 
+		return 1;
+	}
+	forFiles(filename, s1, s2);
+	return 0;
 }
