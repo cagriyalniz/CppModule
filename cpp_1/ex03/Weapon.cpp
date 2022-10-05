@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:50 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:51 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:22:10 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,21 @@ Weapon:: Weapon(){
     
 }
 
-Weapon:: Weapon(std::string type){
-    this->type = type;
+Weapon:: Weapon(std::string type): _type(type){
+    //std::cout<<"weapon const"<<std::endl;
+    //this->type = type;
 }
 
-Weapon::~Weapon(){}
-
-std::string Weapon::get_type(){
-    return this->type;
+Weapon::~Weapon(){
+    //std::cout<<"weapon deconst"<<std::endl;
 }
 
-void Weapon::set_type(std::string type_name){
-    this->type = type_name;
+const std::string &Weapon::getType(){
+    return this->_type;
+}
+
+void Weapon::setType(std::string type_name){
+    this->_type = type_name;
+    
+    //std::cout<<"weapon new type:"<<this->get_type()<<std::endl;
 }

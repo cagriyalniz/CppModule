@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:47 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:48 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:22:24 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 class Weapon{
     private:
-        std::string type;
+        std::string _type;
     public:
         Weapon();
         Weapon(std::string type);
         virtual ~Weapon();
-        std::string get_type();
-        void set_type(std::string type_name);
+        const std::string &getType();
+        void setType(std::string type_name);
 };
 
 #endif

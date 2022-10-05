@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:54 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:55 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:59:15 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@
 #include "Weapon.hpp"
 
 class HumanB{
-    private:
-        std::string _name;
-        Weapon *_wpn;
-    
     public:
-        HumanB(std:: string _name);
+        std::string _name;
+    
+        HumanB();
+        HumanB(std::string name);
         virtual ~HumanB();
         std::string getName();
         void setName(std::string name);
-        Weapon getWeapon();
         void setWeapon(Weapon &new_wpn);
         void attack(void);
+    
+    private:
+        Weapon* _wpn;
 
 };
 

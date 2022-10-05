@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:52:58 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:58 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:42:49 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 class HumanA{
     public:
         std::string _name;
-        Weapon &_wpn;
-        HumanA(std:: string name, Weapon& wpn);
-        virtual ~HumanA();
+        Weapon& _wpn;
         
-        std::string get_name();
-        void set_name(std::string name);
-        Weapon get_weapon();
-        void set_weapon(Weapon wpn);
+        HumanA(Weapon& wpn);
+        HumanA(std::string name, Weapon& wpn);
+        virtual ~HumanA();
+        std::string getName();
+        void setName(std::string name);
+        Weapon getWeapon();
+        void setWeapon(Weapon wpn);
         void attack(void);
 
 };
