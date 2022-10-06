@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:53:19 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:53:19 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/06 20:47:10 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@
 #include <iostream>
 #include <string>
 
+class Harl;
+
+typedef struct s_func
+{
+	std::string name;
+	void (Harl::*f) (void);
+}	t_func;
+
 class Harl{
     public:
         Harl();
         virtual ~Harl();
+        t_func func[4];
+
         void complain(std::string level);
     private:
         
@@ -29,6 +39,8 @@ class Harl{
         void error(void);
 };
 
-typedef void (Harl::*t_func) ( void );
+
+
+//typedef void (Harl::*t_func) ( void );
 
 #endif
