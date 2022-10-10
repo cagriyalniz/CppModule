@@ -6,7 +6,7 @@
 #    By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 22:37:09 by cyalniz           #+#    #+#              #
-#    Updated: 2022/10/06 22:37:31 by cyalniz          ###   ########.fr        #
+#    Updated: 2022/10/10 15:37:39 by cyalniz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJECTS = $(FILES:.cpp=.o)
 
 COMP = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
