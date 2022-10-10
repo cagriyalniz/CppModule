@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:54:39 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:54:40 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:46:55 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ClapTrap
         int attackDamage;
     
     public:
+        ClapTrap();
         ClapTrap(std::string name);
         ~ClapTrap();
 

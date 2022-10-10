@@ -6,25 +6,30 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:50:35 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:50:38 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:50:35 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 //constr
+
+ClapTrap::ClapTrap(){
+    std::cout<<"Constructor called for Claptrap without param"<<std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
     this->_name = name;
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout<<"Constructor called"<<std::endl;
+    std::cout<<"Constructor called for Claptrap with param"<<std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout<<"Destructor called"<<std::endl;
+    std::cout<<this->getName()<<"deconst for Claptrap("<<this->getName()<<")"<<std::endl;
 }
 
 //setter getter

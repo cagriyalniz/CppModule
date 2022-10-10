@@ -6,22 +6,26 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:54:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:54:22 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:51:11 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(): ClapTrap(){
+    std::cout<<"Constructor called for Scavtrap without param"<<std::endl;
+}
 
 ScavTrap::ScavTrap(std:: string _stName): ClapTrap(_stName){
     this->setHitPoints(100);
     this->setEnergyPoints(50);
     this->setAttackDamage(20);
     this->setName(_stName);
-    std::cout<<"ScavTrap constructer function "<<std::endl;
+    std::cout<<"Constructor called for Scavtrap with param"<<std::endl;
 }
 
 ScavTrap::~ScavTrap(){
-    std::cout<<this->getName()<<" is dead :("<<std::endl;
+    std::cout<<this->getName()<<"deconst for Scavtrap("<<this->getName()<<")"<<std::endl;
 }
 
 void ScavTrap::attack(std::string const& target){
