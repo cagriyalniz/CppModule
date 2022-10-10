@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:54:04 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/06 22:50:44 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:41:24 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class ClapTrap
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        //get set
         std::string getName();
         void setName(std::string name);
         unsigned int  getHitPoints();
