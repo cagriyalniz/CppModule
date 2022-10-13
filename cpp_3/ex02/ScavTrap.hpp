@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:50:33 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:54:15 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 16:25:32 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap{
+class ScavTrap: virtual public ClapTrap{
     private:
         ScavTrap();
     public:

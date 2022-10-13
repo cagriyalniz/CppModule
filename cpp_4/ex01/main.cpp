@@ -5,29 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 19:50:30 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/10 16:10:02 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/09/29 23:34:24 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/10/13 20:58:34 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
-{
-    ScavTrap st1("red soldier");
-    ScavTrap st3("grey soldier");
-    st1.guardGate();
-    ClapTrap ct1("blue soldier");
-    ct1.setAttackDamage(4);
-    ct1.attack(st1.getName());
-    st1.attack(ct1.getName());
-    ct1.beRepaired(200);
-    st1.beRepaired(200);
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-    FragTrap ft1("green soldier");
-    ft1.attack(ct1.getName());
-    ft1.attack(st1.getName());
-    ft1.highFivesGuys();
-    
+int main(){
+    const Animal* j = new Dog();
+
+    j->makeSound();
+    //j = new Cat();
+    j->makeSound();
+    delete(j);
+
+    int i = 0;
+    const Animal *(k[10]);
+    while(i < 9){
+        if(i%2 == 0){
+            
+            k[i] = new Cat();
+        }
+        else{
+        
+            k[i] = new Dog();
+        }
+        k[i]->makeSound();
+        i++;
+    }
+    i = 0;
+    while(i < 9){
+        delete(k[i]);
+        i++;
+    }
+    while(1);
     
 }

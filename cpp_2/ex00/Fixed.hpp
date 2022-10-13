@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:53:32 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 19:53:32 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/06 20:53:12 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ class Fixed
     public:
         // constr
         Fixed();
+        //copy constr
         Fixed(const Fixed &copy);
 
         // destru
         ~Fixed();
 
-        // operators
+        //Copy assignment operators
         Fixed & operator=(const Fixed &assign);//bu nedir hocam???
 
         // getter setter

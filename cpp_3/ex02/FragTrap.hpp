@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:01:52 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/09/29 20:13:02 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/10 16:07:50 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap{
+class FragTrap: virtual public ClapTrap{
     private:
         FragTrap();
     public:
