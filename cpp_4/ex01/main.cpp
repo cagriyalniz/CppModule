@@ -13,7 +13,7 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
+//#include "WrongCat.hpp"
 
 int main(){
     const Animal* j = new Dog();
@@ -23,7 +23,7 @@ int main(){
     j->makeSound();
     delete(j);
 
-    int i = 0;
+/*     int i = 0;
     const Animal *(k[10]);
     while(i < 9){
         if(i%2 == 0){
@@ -42,6 +42,6 @@ int main(){
         delete(k[i]);
         i++;
     }
-    while(1);
+    while(1); */
     
 }
