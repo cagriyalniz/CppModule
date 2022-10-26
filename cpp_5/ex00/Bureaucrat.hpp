@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/25 13:53:39 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:34:35 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Bureaucrat{
         std::string getName() const;
         int getGrade();
         void setGrade(int grade);
+        void incBureac();
+        void decBureac();
 };
 
 #endif

@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp_4/ex00/animal",
+            "program": "${workspaceFolder}/cpp_5/ex00/bureaucrat",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
