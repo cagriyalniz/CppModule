@@ -6,19 +6,11 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:10 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:49:17 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:53:06 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-const char *Bureaucrat::GradeTooHighException::what() const throw(){
-    return ("error : more");
-}
-
-const char *Bureaucrat::GradeTooLowException::what() const throw(){
-    return ("error: low");
-}
 
 Bureaucrat::Bureaucrat(){
     std::cout<<"Constructer calling from Bureaucrat class"<<std::endl;
@@ -27,7 +19,7 @@ Bureaucrat::Bureaucrat(){
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade){
     std::cout<<"Parameter Constructer calling from Bureaucrat class"<<std::endl;
     //throwlar gelecek buraya
-/*     try{
+    try{
         if (grade < 1){
             throw std::runtime_error("less");
         }
@@ -38,11 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
     catch(const std::exception& err){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
-    } */
-    if (grade < 1)
-        throw GradeTooLowException();
-    else if (grade > 150)
-        throw GradeTooHighException();
+    }
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -96,13 +84,13 @@ void Bureaucrat::incBureac(){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
     } */
-/*     if (this->getGrade() - 1 < 1)
+    if (this->getGrade() - 1 < 1)
         GradeTooLowException();
     else
-        this->setGrade(this->getGrade() - 1); */
+        this->setGrade(this->getGrade() - 1);
 }
 
-void Bureaucrat::decBureac(int d){
+void Bureaucrat::decBureac(){
 /*     try{
         if (this->getGrade() + 1 > 150){
             throw std::runtime_error("more");
@@ -112,12 +100,15 @@ void Bureaucrat::decBureac(int d){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
     } */
-    this->_grade += d;
+    if (this->getGrade() + 1 > 150)
+        GradeTooHighException();
+    else
+        this->setGrade(this->getGrade() + 1);
 }
 
-/* void  Bureaucrat::GradeTooHighException(){
+void  Bureaucrat::GradeTooHighException(){
     try{
-        if (this->getGrade() > 150){
+        if (this->getGrade() + 1 > 150){
             throw std::runtime_error("more");
         }
     }
@@ -129,7 +120,7 @@ void Bureaucrat::decBureac(int d){
 
 void Bureaucrat::GradeTooLowException(){
     try{
-        if (this->getGrade() < 1){
+        if (this->getGrade() - 1 < 1){
             throw std::runtime_error("less");
         }
     }
@@ -137,5 +128,4 @@ void Bureaucrat::GradeTooLowException(){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
     }
-} */
-
+}

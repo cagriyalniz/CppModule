@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:41:46 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:58:55 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,9 @@ class Bureaucrat{
         int getGrade();
         void setGrade(int grade);
         void incBureac();
-        void decBureac(int d);
-        class GradeTooLowException : public std::exception{
-            public:
-                virtual const char* what() const throw();
-        };
-        class GradeTooHighException : public std::exception{
-            public:
-                virtual const char* what() const throw();
-        };
+        void decBureac();
+        void GradeTooHighException();
+        void GradeTooLowException();
 };
 
 #endif
