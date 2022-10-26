@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 09:34:35 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/26 10:51:17 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ class Bureaucrat{
         void setGrade(int grade);
         void incBureac();
         void decBureac();
+        void GradeTooHighException();
+        void GradeTooLowException();
 };
 
 #endif

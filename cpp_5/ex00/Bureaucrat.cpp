@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:10 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 10:34:23 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/26 10:55:59 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Bureaucrat::setGrade(int grade){
 }
 
 void Bureaucrat::incBureac(){
-    try{
+/*     try{
         if (this->getGrade() - 1 < 1){
             throw std::runtime_error("less");
         }
@@ -83,11 +83,30 @@ void Bureaucrat::incBureac(){
     catch(const std::exception& err){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
-    }
-    this->setGrade(this->getGrade() - 1);
+    } */
+    if (this->getGrade() - 1 < 1)
+        GradeTooLowException();
+    else
+        this->setGrade(this->getGrade() - 1);
 }
 
 void Bureaucrat::decBureac(){
+/*     try{
+        if (this->getGrade() + 1 > 150){
+            throw std::runtime_error("more");
+        }
+    }
+    catch(const std::exception& err){
+        std::cout<<"error: "<<err.what()<<std::endl;
+        return ;
+    } */
+    if (this->getGrade() + 1 > 150)
+        GradeTooHighException();
+    else
+        this->setGrade(this->getGrade() + 1);
+}
+
+void  Bureaucrat::GradeTooHighException(){
     try{
         if (this->getGrade() + 1 > 150){
             throw std::runtime_error("more");
@@ -97,5 +116,16 @@ void Bureaucrat::decBureac(){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
     }
-    this->setGrade(this->getGrade() + 1);
+}
+
+void Bureaucrat::GradeTooLowException(){
+    try{
+        if (this->getGrade() - 1 < 1){
+            throw std::runtime_error("less");
+        }
+    }
+    catch(const std::exception& err){
+        std::cout<<"error: "<<err.what()<<std::endl;
+        return ;
+    }
 }
