@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:41:46 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/28 12:09:38 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat{
         std::string getName() const;
         int getGrade();
         void setGrade(int grade);
-        void incBureac();
+        void incBureac(int i);
         void decBureac(int d);
         class GradeTooLowException : public std::exception{
             public:

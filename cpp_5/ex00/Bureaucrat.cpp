@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:10 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:49:17 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/28 12:09:26 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void Bureaucrat::setGrade(int grade){
     this->_grade = grade;
 }
 
-void Bureaucrat::incBureac(){
+void Bureaucrat::incBureac(int i){
 /*     try{
         if (this->getGrade() - 1 < 1){
             throw std::runtime_error("less");
@@ -100,6 +100,11 @@ void Bureaucrat::incBureac(){
         GradeTooLowException();
     else
         this->setGrade(this->getGrade() - 1); */
+    
+    if (this->getGrade() - i <  1)
+        throw GradeTooLowException();
+    else
+        this->_grade -= i;
 }
 
 void Bureaucrat::decBureac(int d){
@@ -112,7 +117,10 @@ void Bureaucrat::decBureac(int d){
         std::cout<<"error: "<<err.what()<<std::endl;
         return ;
     } */
-    this->_grade += d;
+    if (this->getGrade() + d > 150)
+        throw GradeTooHighException();
+    else
+        this->_grade += d;
 }
 
 /* void  Bureaucrat::GradeTooHighException(){

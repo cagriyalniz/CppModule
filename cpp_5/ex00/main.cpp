@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:23 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:46:45 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/28 12:10:16 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,18 @@ int main()
     b.operator++();
     std::cout<<b.getName() << " " << b.getGrade()<<std::endl;
  */
-    Bureaucrat h("hh", 11);
-    Bureaucrat x("x", 151);
+    //Bureaucrat h("hh", 11);
+    try{
+
+        //Bureaucrat x("x", 151);
+        //Bureaucrat y("y", -12);
+        Bureaucrat t("t", 150);
+        t.incBureac(151);
+        t.decBureac(4);
+    }
+    catch(std::exception &e){
+        std::cout<<e.what()<<std::endl;
+    }
 /*     Bureaucrat c("cagri", 140);
     std::cout<<c.getGrade()<<std::endl;
     c.decBureac(22);
