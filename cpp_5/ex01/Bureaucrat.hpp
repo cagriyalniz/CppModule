@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:27:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 15:58:55 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:23:07 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include <string>
 
 class Bureaucrat{
-    public:
+    private:
         std::string const _name;
-        int _grade;//1 - 150
-
+        int _grade const;
+    public:
         Bureaucrat();
         Bureaucrat(std::string name, int grade);
         virtual ~Bureaucrat();
@@ -30,12 +30,19 @@ class Bureaucrat{
         Bureaucrat operator -- ();
 
         std::string getName() const;
-        int getGrade();
+        int getGrade() const;
         void setGrade(int grade);
-        void incBureac();
-        void decBureac();
-        void GradeTooHighException();
-        void GradeTooLowException();
+        void incBureac(int i);
+        void decBureac(int d);
+        void singForm(const std::string &name, bool hasSigned, const std::string& reason) const;
+        class GradeTooLowException : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooHighException : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
 };
 
 #endif

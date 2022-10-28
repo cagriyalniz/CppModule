@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:42:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/26 16:18:24 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:08:11 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,34 @@ class Form{
     public:
         Form();
         Form(std::string const name, bool isSigned, const int gradeSigned,const int gradeExecute);
+        Form(std:: string name, int gradeSign, int gradeExecute);
         virtual ~Form();
-        Form(Form const &src);
-        Form &operator=(Form const &src);
+        Form(const Form &src);
+        Form &operator=(const Form &src);
 
         std::string getName() const;
-        bool getIsSigned();
+        bool getIsSigned() const;
         int getGradeSigned() const;
         int getGradeExecute() const;
-        void GradeTooHighException();
-        void GradeTooLowException();
+
+        void beSigned(const Bureaucrat& bureaucrat);
+                
+        class GradeTooLowException : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooHighException : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
         
 };
 
+
+/*
+const üye işlevleri, programda sabit olarak bildirilen işlevlerdir.
+Bu işlevler tarafından çağrılan nesne değiştirilemez.
+Nesnede yanlışlıkla yapılan değişikliklerden kaçınmak için 
+const anahtar sözcüğünün kullanılması önerilir.
+*/
 #endif
