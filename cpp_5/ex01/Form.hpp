@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:42:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:08:11 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/31 10:52:35 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
-
+#include <exception>
 class Form{
     private:
         const std::string _name;
@@ -48,6 +48,8 @@ class Form{
         };
         
 };
+
+std::ostream& operator<<(std::ostream& stream, const Form& other);
 
 
 /*

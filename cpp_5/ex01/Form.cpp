@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:42:08 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:21:36 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/10/31 10:47:52 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ Form::Form(): _name("FORM"), _gradeSigned(1), _gradeExecute(1){
     std::cout<<"Constructer calling from From class"<<std::endl;
     this->_isSigned = false;
 }
-
-/* Form::Form(std::string const name, bool isSigned, int const gradeSigned, int const gradeExecute): _name(name), _isSigned(isSigned), _gradeSigned(gradeSigned), _gradeExecute(gradeExecute){
-    if (gradeSigned < 1)
-    std::cout<<"Parameter Constructer calling from Form class"<<std::endl;
-} */
 
 Form::Form(std::string name, int gradeSign, int gradeExecute):
     _name(name),
@@ -75,8 +70,36 @@ bool Form::getIsSigned() const{
 }
 
 void Form::beSigned(const Bureaucrat& bureaucrat){
-    if(bureaucrat.getGrade() > this->getGradeSigned()){
-        bureaucrat.
+    if (bureaucrat.getGrade() > this->getGradeSigned()){
+        bureaucrat.singForm(this->getName(), false, "the greade is to low");
+        throw GradeTooLowException();
     }
+    else if (this->getIsSigned()){
+        bureaucrat.singForm(this->getName(), false, "the form was alreadt signed");
+    }
+    else{
+        bureaucrat.singForm(this->getName(), true, "");
+        this->_isSigned = true;
+    }
+}
 
+const char* Form::GradeTooHighException::what() const throw(){
+    return ("Form error: GradeTooHighException");
+}
+
+const char* Form::GradeTooLowException::what() const throw(){
+    return ("Form error: GradeTooLowException");
+}
+
+std::ostream& operator<<(std::ostream& stream, const Form& src){
+    std::string msg;
+
+    if (src.getIsSigned())
+        msg = "true";
+    else
+        msg = "false";
+    stream << "Form: " << src.getName() << std::endl << "Signed: " << msg<<std::endl
+    << "Grade to sign it: " << src.getGradeSigned() <<std::endl
+    << "Grade to execute it: " << src.getGradeExecute()<<std::endl;
+    return (stream);
 }
