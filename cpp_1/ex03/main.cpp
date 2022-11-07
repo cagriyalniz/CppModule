@@ -30,6 +30,8 @@ int main()
         jim.attack();
         club.setType("some other type of club");
         jim.attack();
+        club.setType("çivili sopa");
+        jim.attack();
     }
 
     

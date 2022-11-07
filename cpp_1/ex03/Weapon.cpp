@@ -22,10 +22,10 @@ Weapon:: Weapon(std::string type): _type(type){
 }
 
 Weapon::~Weapon(){
-    //std::cout<<"weapon deconst"<<std::endl;
+    std::cout<<"weapon deconst"<<std::endl;
 }
 
-const std::string &Weapon::getType(){
+const std::string Weapon::getType(){
     return this->_type;
 }
 
