@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
-
+#include <iomanip>
 class My_Contact{
     public:
         std::string name;
@@ -24,6 +24,8 @@ class My_Contact{
     public:
         std::string get_name()
         {
+            if(this->name.length() > 10)
+                return (this->name.substr(0, 9) + ".");
             return this->name;
         }
 
@@ -34,6 +36,8 @@ class My_Contact{
 
         std::string get_last_name()
         {
+            if(this->last_name.length() > 10)
+                return (this->last_name.substr(0, 9) + ".");
             return this->last_name;
         }
 
@@ -44,6 +48,8 @@ class My_Contact{
 
         std::string get_nick_name()
         {
+            if(this->nick_name.length() > 10)
+                return (this->nick_name.substr(0, 9) + ".");
             return this->nick_name;
         }
 
@@ -74,6 +80,8 @@ class My_Contact{
 
         std::string get_secret()
         {
+            if(this->secret.length() > 10)
+                return (this->secret.substr(0, 9) + ".");           
             return this->secret;
         }
 
@@ -110,6 +118,7 @@ class PhoneBook
         {
             int count;
             int i;
+            int choosen;
 
             i = 0;
             if(pb.get_kisi_sayisi() < 8)
@@ -121,71 +130,48 @@ class PhoneBook
             
             while(i < count)
             {
-                std::cout<<pb.mc[i].get_id() + 1 <<"-"<< " | " <<  pb.mc[i].get_name()<<
-                     " | "<<pb.mc[i].get_last_name()<< " | " << pb.mc[i].get_nick_name()<< 
-                     " | " << pb.mc[i].get_number() <<std::endl;
+                std::cout<<pb.mc[i].get_id() + 1 <<"-"<< 
+                "|"<< std::setw(10) <<  pb.mc[i].get_name()<<
+                "|"<< std::setw(10)<<pb.mc[i].get_last_name()<<
+                "|"<< std::setw(10) << pb.mc[i].get_nick_name()<< 
+                "|"<< std::setw(10) << pb.mc[i].get_number() <<std::endl;
                 i++;
             }
+            std::cout<<"choose a person: "<<std::endl;
+            std::cin>>choosen;
+            show_details(choosen, pb);
 
             
         }
 
-
-
-        void check_str(std::string* data, std::string type){
-            
-                std::cout<<type<<" ?"<<std::endl;
-                //std::getline(std::cin, *data);
-                std::cin>>*data;
-   /*              if(data->length() == 0){
-                    std::cout<<"empty data!"<<std::endl;
-                    return 0;
-                }
-                return 1; */
-            
+        void show_details(int i, PhoneBook &pb){
+            std::cout<<pb.mc[i - 1].get_id() + 1 <<"-"<< 
+                     "|" << std::setw(10) <<  pb.mc[i - 1].get_name()<<
+                     "|" << std::setw(10)<<pb.mc[i - 1].get_last_name()<< 
+                     "|"<< std::setw(10) << pb.mc[i -1].get_nick_name()<< 
+                     "|" << std::setw(10)<< pb.mc[i - 1].get_number() <<std::endl;
         }
 
-        int ft_nmbr_len(int nmbr){
-            int len;
-            len = 0;
-            if(nmbr == 0)
-                return 1;
-            while(nmbr > 0){
-                len++;
-                nmbr /= 10;
-            }
-            return (len);
-        }
-
-        int check_nmbr(int data, std::string type){
-            
-                std::cout<<type<<" ?"<<std::endl;
-                std::cin>>data;
-                if(ft_nmbr_len(data) == 0){
-                    std::cout<<"empty data!"<<std::endl;
-                    return (0);
-                }
-                return (1);
-        }
 
         void add(PhoneBook& pb, My_Contact& mc, int id)
         {
             
             
-            std::string name = "test";
+            std::string name;
             std::string last_name;
             std::string nick_name;
             std::string secret;
-            int nmbr = 0;
-            check_str(&name, "name");
-     
-            check_str(&last_name, "last name");
-            check_str(&nick_name, "nick name");
-            check_nmbr(nmbr, "number");
-            check_str(&secret, "secret");
-                
-            
-            
+            int nmbr;
+            std::cout<<"name ?"<<std::endl;
+            std::cin>>name;
+            std::cout<<"last name ?"<<std::endl;
+            std::cin>>last_name;
+            std::cout<<"nick name ?"<<std::endl;
+            std::cin>>nick_name;
+            std::cout<<"secret ?"<<std::endl;
+            std::cin>>secret;
+            std::cout<<"number ?"<<std::endl;
+            std::cin>>nmbr;
             
             
             if(pb.get_kisi_sayisi() > 7)
