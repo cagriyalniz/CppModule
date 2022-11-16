@@ -21,29 +21,29 @@ static std :: string	replacing(std :: string str, std :: string s1, std :: strin
 	size_t i = 0;
 	size_t j = 0;
 	size_t len = s1.length();
+	size_t strLen = str.length();
 	int flag = 0;
-	int posend = 0;
-	int posfirst = 0;
-	while(i < str.length()){
+	size_t posend = 0;
+	size_t posfirst = 0;
+	
+	while(i < strLen){
 		j = 0;
 		if(str[i] == s1[j]){
 			
 			posfirst = i;
-			while(str[i] == s1[j]){
-				i++;
-				j++;
+			while(str[i] == s1[j] && str[i]){
+				i += 1;
+				j += 1;
 			}
 			if(j == len){
-			std::cout<<"test"<<std::endl;
-				
 				flag = 1;
 				posend = i - 1;
 				break;
 			}
 		}
-		i++;
+		i += 1;
 	}
-	if(flag = 1){
+	if(flag == 1){
 		str.erase(posfirst, posend- posfirst + 1);
 		str.insert(posfirst, s2);
 	}
