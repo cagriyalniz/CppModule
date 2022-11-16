@@ -13,16 +13,17 @@
 #include "Weapon.hpp"
 
 Weapon:: Weapon(){
+    std::cout<<"weapon const"<<std::endl;
     
 }
 
 Weapon:: Weapon(std::string type): _type(type){
-    //std::cout<<"weapon const"<<std::endl;
+    std::cout<<"weapon const with param " <<_type<<std::endl;
     //this->type = type;
 }
 
 Weapon::~Weapon(){
-    std::cout<<"weapon deconst"<<std::endl;
+    std::cout<<"weapon deconst "<<this->getType()<<std::endl;
 }
 
 const std::string Weapon::getType(){

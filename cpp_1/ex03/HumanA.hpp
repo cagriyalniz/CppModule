@@ -28,11 +28,28 @@ class HumanA{
         std::string getName();
         void setName(std::string name);
         Weapon getWeapon();
-        void setWeapon(Weapon wpn);
+        void setWeapon(Weapon &wpn);
         void attack(void);
 
 };
 
+class HumanC{
+    public:
+        std::string _name;
+        Weapon _wpn;
+        
+        HumanC();
+        HumanC(Weapon wpn);
+        HumanC(std::string name);
+        HumanC(std::string name, Weapon wpn);
+        virtual ~HumanC();
+        std::string getName();
+        void setName(std::string name);
+        Weapon getWeapon();
+        void setWeapon(Weapon wpn);
+        void attack(void);
+
+};
 
 
 #endif

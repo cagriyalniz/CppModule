@@ -1,0 +1,71 @@
+string memory addres: 0x7ffeaf68c8a0
+pointer memory addres: 0x7ffeaf68c890
+referance memory addres: 0x7ffeaf68c8a0
+
+Text atamasi yapildi
+
+my text after text atamasi: HI THIS IS BRAIN
+my text memory addres after text atamasi: 0x7ffeaf68c8a0
+pointer content after text atamasi: HI THIS IS BRAIN
+pointer memory addres after text atamasi: 0x7ffeaf68c890
+referance content after text atamasi: HI THIS IS BRAIN
+referance memory addres after text atamasi: 0x7ffeaf68c8a0
+
+
+-----STR FUNCTION START-----
+str(my text) content in str func: HI THIS IS BRAIN
+my text memory addres in func: 0x7ffeaf68c8c0
+str(my text) content: qwe
+string(my text) memory addres in func: 0x7ffeaf68c8c0
+-----STR FUNCTION END-----
+
+
+my text after str_func: HI THIS IS BRAIN
+my text memory addres after str_func: 0x7ffeaf68c8a0
+
+pointer content after str_func: HI THIS IS BRAIN
+pointer memory addres after str_func: 0x7ffeaf68c890
+
+referance content after str_func: HI THIS IS BRAIN
+referance memory addres after str_func: 0x7ffeaf68c8a0
+
+
+-----REF FUNCTION START-----
+referance content in ref func: HI THIS IS BRAIN
+referance memory addres in func: 0x7ffeaf68c8a0
+referance content: abc
+referance memory addres in func: 0x7ffeaf68c8a0
+-----REF FUNCTION END-----
+
+
+my text after ref_func: abc
+my text memory addres after ref_func: 0x7ffeaf68c8a0
+
+pointer content after ref_func: abc
+pointer memory addres after ref_func: 0x7ffeaf68c890
+
+referance content after ref_func: abc
+referance memory addres after ref_func: 0x7ffeaf68c8a0
+
+
+-----PTR FUNCTION START-----
+pointer content in ptr func: abc
+pointer memory addres in func: 0x7ffeaf68c828
+pointer content: xyz
+pointer memory addres in func: 0x7ffeaf68c828
+-----PTR FUNCTION START-----
+
+
+my text after ptr_func: abc
+my text memory addres after ptr_func: 0x7ffeaf68c8a0
+
+pointer content after ptr_func: abc
+pointer memory addres after ptr_func: 0x7ffeaf68c890
+
+referance content after ptr_func: abc
+referance memory addres after ptr_func: 0x7ffeaf68c8a0
+
+
+my text: abc
+pointer content: abc
+referance content: abc

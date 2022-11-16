@@ -18,7 +18,10 @@ OBJECTS = $(FILES:.cpp=.o)
 
 COMP = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
+
+%.o:%.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

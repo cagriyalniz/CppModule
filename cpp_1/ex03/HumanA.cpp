@@ -42,11 +42,60 @@ Weapon HumanA::getWeapon(){
     return _wpn;
 }
 
-void HumanA::setWeapon(Weapon wpn){
-    _wpn = wpn;
+void HumanA::setWeapon(Weapon &wpn){
+    this->_wpn = wpn;
 }
 
 void HumanA::attack(){
-    std::cout<<getName()<<" "<<this->getWeapon().getType()<< std::endl;
+    std::cout<<getName()<<" attack "<<_wpn.getType()<< std::endl;
 }
 
+//------------------------------
+
+HumanC::HumanC(){
+    std::cout<<"HumanC const"<<std::endl;
+    return;
+}
+
+HumanC::HumanC(Weapon wpn): _wpn(wpn){
+    this->_wpn = wpn;
+    std::cout<<"HumanC .const"<<std::endl;
+    return;
+}
+
+HumanC::HumanC(std::string name): _name(name){
+
+    std::cout<<"HumanC const"<<std::endl;
+    return;
+}
+
+HumanC::HumanC(std::string name, Weapon wpn): _name(name), _wpn(wpn){
+
+    std::cout<<"HumanC const"<<std::endl;
+    return;
+}
+
+HumanC::~HumanC(){
+    std::cout<<"HumanC deconst"<<std::endl;
+}
+
+    
+std::string HumanC::getName(){
+    return _name;
+}
+
+void HumanC::setName(std::string name){
+    _name = name;
+}
+
+Weapon HumanC::getWeapon(){
+    return _wpn;
+}
+
+void HumanC::setWeapon(Weapon wpn){
+    _wpn = wpn;
+}
+
+void HumanC::attack(){
+    std::cout<<getName()<<" "<<this->getWeapon().getType()<< std::endl;
+}

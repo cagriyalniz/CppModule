@@ -42,6 +42,6 @@ void HumanB::setWeapon(Weapon &new_wpn){
 
 void HumanB::attack(){
     
-    std::cout<<getName()<<" " << this->_wpn->getType()<< std::endl;
+    std::cout<<getName()<<" attack " << _wpn->getType()<< std::endl;
 }
 

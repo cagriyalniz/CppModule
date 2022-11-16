@@ -20,7 +20,8 @@
 class HumanB{
     public:
         std::string _name;
-    
+        Weapon* _wpn;
+
         HumanB();
         HumanB(std::string name);
         virtual ~HumanB();
@@ -29,8 +30,8 @@ class HumanB{
         void setWeapon(Weapon &new_wpn);
         void attack(void);
     
-    private:
-        Weapon* _wpn;
+/*     private:
+        Weapon* _wpn; */
 
 };
 
