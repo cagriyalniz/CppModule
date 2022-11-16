@@ -19,9 +19,22 @@ int main()
     Fixed c;
 
     c = b;
-    std::cout<< "a.getRaw"<<a.getRawBits()<<std::endl;
-    std::cout<< "b.getRaw"<<b.getRawBits()<<std::endl;
-    std::cout<< "c.getRaw"<<c.getRawBits()<<std::endl;
+    std::cout<< "a: "<<a.getRawBits()<<std::endl;
+    std::cout<< "b: "<<b.getRawBits()<<std::endl;
+    std::cout<< "c: "<<c.getRawBits()<<std::endl;
 
+    a.setRawBits(1);
+    std::cout<< "a: "<<a.getRawBits()<<std::endl;
+    std::cout<< "b: "<<b.getRawBits()<<std::endl;
+    std::cout<< "c: "<<c.getRawBits()<<std::endl;
     
+    b.setRawBits(2);
+    std::cout<< "a: "<<a.getRawBits()<<std::endl;
+    std::cout<< "b: "<<b.getRawBits()<<std::endl;
+    std::cout<< "c: "<<c.getRawBits()<<std::endl;
+
+    c.setRawBits(3);
+    std::cout<< "a: "<<a.getRawBits()<<std::endl;
+    std::cout<< "b: "<<b.getRawBits()<<std::endl;
+    std::cout<< "c: "<<c.getRawBits()<<std::endl;
 }
