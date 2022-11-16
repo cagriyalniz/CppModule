@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp_1/ex03/violence",
+            "program": "${workspaceFolder}/cpp_1/ex04/file",
             "args": [],
             "cwd": "${workspaceFolder}"
         }

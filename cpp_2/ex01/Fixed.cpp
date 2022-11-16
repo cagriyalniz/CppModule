@@ -30,29 +30,28 @@ Fixed::Fixed(const Fixed &copy)
 
 Fixed::Fixed(const int i_param)
 {
-    std::cout<<"Default constructor called"<<std::endl;
-    this->_fixed_point_nmbr = i_param;
+    std::cout<<"integer Default constructor called"<<std::endl;
+    this->_fixed_point_nmbr = i_param << this->_bits;
     
 }
 
 Fixed::Fixed(const float f_param)
 {
-/*     It converts it to the corresponding fixed-point value. The fractional bits value is
-initialized to 8 like in exercise 00. */
-
-    /* std::cout<<"Default constructor called"<<std::endl;
-    this->_fixed_point_nmbr = f_param; */
+    std::cout<<"integer Default constructor called"<<std::endl;
+    this->_fixed_point_nmbr = (int)(roundf(f_param*(1<<this->_bits)));
     
 }
 
 float Fixed::toFloat( void ) const
 {
     //that converts the fixed-point value to a floating-point value
+    return ((float)this->_fixed_point_nmbr/(1<<this->_bits));
 }
 
 int Fixed::toInt( void ) const
 {
     //that converts the fixed-point value to an integer value.
+    return ((int)(this->_fixed_point_nmbr>>this->_bits));
 }
 
 
@@ -81,4 +80,9 @@ void Fixed::setRawBits(int const raw)
 {
     std::cout<<"setRawBits member function called"<<std::endl;
     this->_fixed_point_nmbr = raw;
+}
+
+std::ostream &operator<<(std::ostream &op, const Fixed &a){
+    op<<a.toFloat();
+    return (op);
 }

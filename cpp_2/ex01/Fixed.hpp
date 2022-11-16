@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -44,7 +45,7 @@ class Fixed
 
     private:
         int _fixed_point_nmbr;
-        static const int _store_nmbr_fractional_bits = 8;
+        static const int _bits = 8;
 };
-
+std::ostream &operator<<(std::ostream &op, const Fixed &a);
 # endif
