@@ -31,7 +31,7 @@ int main(int ac, char **av)
             i = 0;
             while(av[j][i])
             {
-                if(islower(av[j][i]) == 1)
+                if(islower(av[j][i]))
                 {
                     ch = toupper(av[j][i]);
                 }
@@ -46,7 +46,7 @@ int main(int ac, char **av)
         }
     }
     else
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"<<std::endl;
+    std::cout<<"\n";
 }
 
