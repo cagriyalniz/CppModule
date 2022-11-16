@@ -21,6 +21,9 @@ COMP = c++
 
 FLAGS = -Wall -Wextra -Werror
 
+%.o:%.cpp
+	$(CC) $(FLAGS) -c $< -o $@
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)

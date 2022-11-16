@@ -18,8 +18,14 @@ int main()
     z.set_name("Foo");
     z.announce();
 
-    Zombie* x = newZombie("asd");
+    Zombie* x;
+    x = newZombie("asd");
     x->announce();
     randomChump("random");
-    
+    delete x;
 }
+
+/* Zombie* aPtr = new Zombie;  //This is an heap allocation
+Zombie  bObj; //This is stack allocatio
+In C++, variables on the heap must be destroyed manually and never fall out of scope.
+The data is freed with delete, delete[], or free. */
